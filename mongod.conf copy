@@ -1,0 +1,27 @@
+# SystemLog sets the destination to which all log output has to be sent
+# Set the path of the log file
+# Appends new entries to the end of the existing log file
+systemLog:
+   destination: file
+   path: "~/Programs/mongodb/logs/mongod.log"
+   logAppend: true
+
+# Storage sets the directory where mongod instance stores its data
+# Enables journaling
+# and runs on Wired Tiger storage engine 
+storage:
+   dbPath: "~/Programs/mongodb/data/db/"
+   journal:
+      enabled: false
+   engine:
+      wiredTiger 
+
+# Net sets the IP address and TCP port for mongod instance 
+net:
+   bindIp: 127.0.0.1
+   port: 27017
+
+# fork and run in background
+# location of pid file 
+processManagement:
+   fork: true

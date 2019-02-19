@@ -1,0 +1,1 @@
+./bin/mongod --port 27017 --bind_ip 127.0.0.1 --dbpath ~/Programs/mongodb/data/db --logpath ~/Programs/mongodb/logs/mongod.log --fork

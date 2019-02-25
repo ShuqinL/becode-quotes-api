@@ -14,7 +14,7 @@ exports.quotes_create = function (req, res){
     );
     quotes.save(function (err){
         if (err){
-            return next(err);
+            return res.send(err);
         }
         res.send("Quote created successfully");
     });
@@ -23,7 +23,7 @@ exports.quotes_create = function (req, res){
 exports.quotes_details = function (req, res){
     Quotes.findById(req.params.id, function(err,quotes){
         if(err) {
-            return next(err);
+            return res.send(err);
         }
         res.send(quotes);
     });
@@ -38,7 +38,7 @@ exports.quotes_update = function (req, res){
     Quotes.findByIdAndUpdate(req.params.id, {$set: quotes}, // req.body
     function (err, quotes){
         if (err){
-            return next(err);
+            return res.send(err);
         }
         res.send("Quote updated.");
     });
@@ -47,7 +47,7 @@ exports.quotes_update = function (req, res){
 exports.quotes_delete = function (req, res){
     Quotes.findByIdAndRemove(req.params.id, function(err){
         if(err){
-            return next(err);
+            return res.send(err);
         }
         res.send("Deleted successfully!");
     });

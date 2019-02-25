@@ -7,12 +7,14 @@ const app = express();
 //set up mongoose connection
 const mongoose = require("mongoose");
 
-let dev_db_url = 'mongodb+srv://reneelsq:cestRenee&007@rnc-6vzo0.mongodb.net/test?retryWrites=true'; 
+let dev_db_url = 'mongodb://mymongouser:hellomongouser123@rnc-shard-00-00-6vzo0.mongodb.net:27017,rnc-shard-00-01-6vzo0.mongodb.net:27017,rnc-shard-00-02-6vzo0.mongodb.net:27017/test?ssl=true&replicaSet=RNC-shard-0&authSource=admin&retryWrites=true'; 
 
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, {useNewUrlParser:true});
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
+
+db.on("success", console.log.bind(console, "MongoDB connection success:"));
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 

@@ -8,8 +8,8 @@ exports.test = function (req, res){
 exports.quotes_create = function (req, res){
     let quotes = new Quotes(
         {
-            quote:'Ik ben koppig',//req.body.quote,
-            author:' ccc'//req.body.author
+            quote:'This world is but a canvas to our imagination.',//req.body.quote,
+            author:' Henry David Thoreau'//req.body.author
         }
     );
     quotes.save(function (err){
@@ -31,8 +31,8 @@ exports.quotes_details = function (req, res){
 
 exports.quotes_update = function (req, res){
     let quotes = {
-        quote: "Ik ben koppig en mijn vrouw nog meer",
-        author: "lsq"
+        quote: " A goal is a dream with a deadline. |",
+        author: " Napoleon Hill"
 
     };
     Quotes.findByIdAndUpdate(req.params.id, {$set: quotes}, // req.body

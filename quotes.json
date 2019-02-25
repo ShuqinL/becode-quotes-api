@@ -1,0 +1,10 @@
+[
+    {
+           "quote":"This world is but a canvas to our imagination.",//req.body.quote,
+            "author":" Henry David Thoreau"  //req.body.author
+        },
+    {
+           "quote": "If you think good design is expensive, you should look at the cost of bad design. ",//req.body.quote,
+            "author":" Dr. Ralf Speth, CEO Jaguar"//req.body.author
+        }
+]

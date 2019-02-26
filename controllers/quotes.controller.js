@@ -16,7 +16,10 @@ exports.quotes_create = function (req, res){
         if (err){
             return res.send(err);
         }
-        res.send("Quote created successfully");
+        res.send({
+            "message":"Quote created successfully",
+            "quotes": quotes
+        });
     });
 };
 

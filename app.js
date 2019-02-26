@@ -30,7 +30,7 @@ app.listen(port,()=>{
 
 
 // const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://reneelsq:cestRenee%26007@RNC.mongodb.net/admin";
+// const uri = "mongodb+srv://reneelsq:password@RNC.mongodb.net/admin";
 // const client = new MongoClient(uri, { useNewUrlParser: true });
 // client.connect(err => {
 //   const collection = client.db("test").collection("devices");

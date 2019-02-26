@@ -8,8 +8,8 @@ exports.test = function (req, res){
 exports.quotes_create = function (req, res){
     let quotes = new Quotes(
         {
-            quote:'This world is but a canvas to our imagination.',//req.body.quote,
-            author:' Henry David Thoreau'//req.body.author
+            quote:req.body.quote,
+            author:req.body.author
         }
     );
     quotes.save(function (err){
@@ -34,8 +34,8 @@ exports.quotes_details = function (req, res){
 
 exports.quotes_update = function (req, res){
     let quotes = {
-        quote: " A goal is a dream with a deadline. |",
-        author: " Napoleon Hill"
+        quote: req.body.quote,
+        author: req.body.author
 
     };
     Quotes.findByIdAndUpdate(req.params.id, {$set: quotes}, // req.body
